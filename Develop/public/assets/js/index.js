@@ -189,6 +189,13 @@ if (window.location.pathname === '/notes') {
   newNoteBtn.addEventListener('click', handleNewNoteView);
   clearBtn.addEventListener('click', renderActiveNote);
   noteForm.addEventListener('input', handleRenderBtns);
+
+  //event listener for delete button
+  document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-note')) {
+      handleNoteDelete(event);
+    }
+  });
 }
 
 getAndRenderNotes();
